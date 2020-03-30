@@ -5,17 +5,18 @@ const Persons = (props) => {
     
     const personsList = props.persons;
 
-    let list = personsList.map((person, index) => <Person 
+    return personsList.map((person, index) => {
+        return <Person 
             key={person.id} 
             name={person.name} 
             age={person.age} 
             remove={ () => props.clicked(index)} 
-            changed={ (event) => props.textChangeHandler(event, person.id)}/>
-    )
+            changed={ (event) => props.changed(event, person.id)}/>
+        })
 
-    return (
-        <div>{list}</div>
-    )
+    // return (
+    //     <div>{list}</div>
+    // )
     
 }
 

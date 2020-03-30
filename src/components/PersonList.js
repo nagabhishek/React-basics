@@ -51,7 +51,10 @@ class PersonList extends Component{
         return(
             <div>
                 <button style={style} onClick={this.toggleHandler}>Toggle List</button>
-                <Persons persons={this.state.persons} clicked={this.removePersonHandler} changed={this.textChangeHandler}/>
+                {
+                    this.state.showNames ? <Persons persons={this.state.persons} clicked={this.removePersonHandler} changed={this.textChangeHandler}/> : null
+
+                }
             </div>
         )
     }

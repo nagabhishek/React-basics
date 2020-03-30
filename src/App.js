@@ -12,6 +12,7 @@ import ClickCounter from './components/HOC/ClickCounter'
 import HoverCounter from './components/HOC/HoverCounter'
 import A from './components/ContextDemo/A';
 import UserContext from './components/ContextDemo/userContext'
+import Lifecycle from './components/Lifecycle/Lifecycle';
 
 //import styles from './styles.module.css'
 
@@ -25,13 +26,14 @@ function App() {
       {/* <Counter/> */}
       {/* <StyleComponent/> */}
       {/* <ParentComponent/> */}
-      <PersonList/>
+      {/* <PersonList/> */}
       {/* <ClickCounter/>
       <HoverCounter/> */}
 
       {/* <UserContext.Provider value="Hello from Context!!!">
           <A />
         </UserContext.Provider> */}
+        <Lifecycle/>
     </div>
   );
 }
