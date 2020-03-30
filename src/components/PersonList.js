@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import Person from "./Person/Person"
+import Persons from './Person/Persons';
 
 class PersonList extends Component{
 
     constructor(){
-        super()
-        this.toggleHandler = this.toggleHandler.bind(this);
-    }
+        super();
+                
+        this. state = {
+            persons: [
+                {name: "One", age: 25, id:"1"},
+                {name: "Two", age: 20, id:"2"},
+                {name: "Three", age: 30 , id:"3"}
+            ],
+            showNames: false
+        }
 
-    state = {
-        persons: [
-            {name: "One", age: 25, id:"1"},
-            {name: "Two", age: 20, id:"2"},
-            {name: "Three", age: 30 , id:"3"}
-        ],
-        showNames: false
+        this.toggleHandler = this.toggleHandler.bind(this);
     }
 
     removePersonHandler = (index) => {
@@ -45,19 +46,12 @@ class PersonList extends Component{
             this.setState({persons:persons});
         }
 
-        let personsList = null;
-        if(this.state.showNames){
-            personsList = this.state.persons.map((person, index) => {
-                return <Person key={person.id} name={person.name} age={person.age} remove={ () => this.removePersonHandler(index)} changed={ (event) => this.textChangeHandler(event, person.id)}/>
-            })
-        }
-
         style.backgroundColor = this.state.showNames ? 'green' : 'red';
 
         return(
             <div>
                 <button style={style} onClick={this.toggleHandler}>Toggle List</button>
-                {personsList}
+                <Persons persons={this.state.persons} clicked={this.removePersonHandler} changed={this.textChangeHandler}/>
             </div>
         )
     }

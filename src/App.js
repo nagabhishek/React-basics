@@ -25,13 +25,13 @@ function App() {
       {/* <Counter/> */}
       {/* <StyleComponent/> */}
       {/* <ParentComponent/> */}
-      {/* <PersonList/> */}
+      <PersonList/>
       {/* <ClickCounter/>
       <HoverCounter/> */}
 
-      <UserContext.Provider value="Hello from Context!!!">
+      {/* <UserContext.Provider value="Hello from Context!!!">
           <A />
-        </UserContext.Provider>
+        </UserContext.Provider> */}
     </div>
   );
 }
